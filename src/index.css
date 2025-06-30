@@ -1,0 +1,345 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced Floating UI and Glow Effects */
+@layer utilities {
+  /* Background Effects - Light Theme with Classy Colors */
+  .floating-background {
+    position: relative;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(52, 168, 83, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+  }
+
+  /* Dark Theme - Pure Matte Black with White Glow */
+  .dark .floating-background {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+  }
+
+  /* Floating Cards - Enhanced for Matte Black */
+  .floating-card {
+    backdrop-filter: blur(20px);
+    box-shadow: 
+      0 8px 32px rgba(52, 168, 83, 0.1),
+      0 0 0 1px rgba(52, 168, 83, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .floating-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 12px 40px rgba(52, 168, 83, 0.15),
+      0 0 0 1px rgba(52, 168, 83, 0.3);
+  }
+
+  /* Dark Theme - Pure Black with White Glow */
+  .dark .floating-card {
+    background: rgba(0, 0, 0, 0.95) !important;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 0 20px rgba(255, 255, 255, 0.05);
+  }
+
+  .dark .floating-card:hover {
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.9),
+      0 0 0 1px rgba(255, 255, 255, 0.15),
+      0 0 30px rgba(255, 255, 255, 0.08);
+  }
+
+  /* Floating Sidebar - Matte Black */
+  .floating-sidebar {
+    backdrop-filter: blur(20px);
+    box-shadow: 
+      4px 0 24px rgba(52, 168, 83, 0.1),
+      0 0 0 1px rgba(52, 168, 83, 0.2);
+  }
+
+  .dark .floating-sidebar {
+    background: rgba(0, 0, 0, 0.98) !important;
+    box-shadow: 
+      4px 0 24px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 0 20px rgba(255, 255, 255, 0.03);
+  }
+
+  /* Floating Header - Matte Black */
+  .floating-header {
+    backdrop-filter: blur(20px);
+    box-shadow: 
+      0 4px 24px rgba(52, 168, 83, 0.1),
+      0 0 0 1px rgba(52, 168, 83, 0.2);
+  }
+
+  .dark .floating-header {
+    background: rgba(0, 0, 0, 0.98) !important;
+    box-shadow: 
+      0 4px 24px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 0 20px rgba(255, 255, 255, 0.03);
+  }
+
+  /* Floating Dropdown */
+  .floating-dropdown {
+    backdrop-filter: blur(20px);
+    animation: slideDown 0.2s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Floating Navigation Items */
+  .floating-nav-item {
+    backdrop-filter: blur(10px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .floating-nav-item:hover {
+    transform: translateX(2px);
+  }
+
+  /* Floating Buttons */
+  .floating-button {
+    backdrop-filter: blur(10px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .floating-button:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Floating Input */
+  .floating-input {
+    backdrop-filter: blur(10px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .floating-input:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(52, 168, 83, 0.3);
+  }
+
+  .dark .floating-input:focus {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Floating Main Content */
+  .floating-main {
+    backdrop-filter: blur(5px);
+  }
+
+  /* Enhanced Glow Effects - Light Theme with Classy Colors */
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(52, 168, 83, 0.3);
+  }
+
+  .glow-primary:hover {
+    box-shadow: 0 0 30px rgba(52, 168, 83, 0.5);
+  }
+
+  .glow-danger {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  .glow-danger:hover {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
+  }
+
+  .glow-active {
+    box-shadow: 0 0 15px rgba(52, 168, 83, 0.2);
+  }
+
+  .glow-logo {
+    box-shadow: 0 0 20px rgba(52, 168, 83, 0.4);
+  }
+
+  .glow-avatar {
+    box-shadow: 0 0 15px rgba(52, 168, 83, 0.3);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    animation: pulse 2s infinite;
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 8px rgba(52, 168, 83, 0.6);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Dark mode specific glows - Enhanced White Glow for Matte Black */
+  .dark .glow-primary {
+    box-shadow: 
+      0 0 25px rgba(255, 255, 255, 0.3),
+      0 0 50px rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glow-primary:hover {
+    box-shadow: 
+      0 0 35px rgba(255, 255, 255, 0.4),
+      0 0 70px rgba(255, 255, 255, 0.15);
+  }
+
+  .dark .glow-danger {
+    box-shadow: 
+      0 0 25px rgba(255, 255, 255, 0.3),
+      0 0 50px rgba(239, 68, 68, 0.2);
+  }
+
+  .dark .glow-danger:hover {
+    box-shadow: 
+      0 0 35px rgba(255, 255, 255, 0.4),
+      0 0 70px rgba(239, 68, 68, 0.3);
+  }
+
+  .dark .glow-active {
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 40px rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glow-logo {
+    box-shadow: 
+      0 0 25px rgba(255, 255, 255, 0.4),
+      0 0 50px rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glow-avatar {
+    box-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 40px rgba(255, 255, 255, 0.15);
+  }
+
+  .dark .glow-red {
+    box-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.4),
+      0 0 30px rgba(239, 68, 68, 0.3);
+  }
+
+  .dark .glow-emerald {
+    box-shadow: 
+      0 0 12px rgba(255, 255, 255, 0.5),
+      0 0 24px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Scrollbar Styling */
+  .floating-main::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .floating-main::-webkit-scrollbar-track {
+    background: rgba(52, 168, 83, 0.1);
+    border-radius: 3px;
+  }
+
+  .floating-main::-webkit-scrollbar-thumb {
+    background: rgba(52, 168, 83, 0.3);
+    border-radius: 3px;
+  }
+
+  .floating-main::-webkit-scrollbar-thumb:hover {
+    background: rgba(52, 168, 83, 0.5);
+  }
+
+  .dark .floating-main::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .dark .floating-main::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .floating-main::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Enhanced Text Glow for Dark Mode */
+  .dark .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  .dark .text-glow-strong {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+
+  /* Enhanced Border Glow for Dark Mode */
+  .dark .border-glow {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      inset 0 0 20px rgba(255, 255, 255, 0.02);
+  }
+
+  /* Matte Black Background Override */
+  .dark .bg-matte-black {
+    background: #000000 !important;
+  }
+
+  .dark .bg-matte-black-90 {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+
+  .dark .bg-matte-black-95 {
+    background: rgba(0, 0, 0, 0.95) !important;
+  }
+}
+
+/* Additional animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Enhanced Gradient Text for Light Theme */
+.gradient-text-classy {
+  background: linear-gradient(135deg, #34a853, #4f46e5, #a855f7, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark Mode Gradient Text with White Glow */
+.dark .gradient-text-classy {
+  background: linear-gradient(135deg, #ffffff, #f3f4f6, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
